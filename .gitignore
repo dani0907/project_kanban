@@ -1,0 +1,8 @@
+# React
+kanban_react/node_modules/
+kanban_react/build/
+
+# Spring Boot
+kanban_spring/build/
+kanban_spring/out/
+kanban_spring/.gradle/
