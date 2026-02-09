@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Route,Routes } from 'react-router-dom'
 import axios from 'axios'
 import Layout from './component/layout'
-import MainPage from './pages/mainPage'
+import KanbanBoard from './pages/kanbanBoard'
 
 function App() {
   const [count, setCount] = useState(0);
@@ -21,7 +21,7 @@ function App() {
     <>
       <Routes>
         <Route path='/' element={<Layout></Layout>}>
-          <Route index element={<MainPage></MainPage>}></Route>
+          <Route index element={<KanbanBoard></KanbanBoard>}></Route>
         </Route>
       </Routes>
     </>
