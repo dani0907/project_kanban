@@ -4,11 +4,11 @@ import Footer from "./footer";
 
 function Layout(){
   return(<>
-  <Header></Header>
-  <div id="mainContainer">
-    <Outlet></Outlet>
+  <div className="min-h-screen bg-white text-gray-900 font-sans antialiased">
+    <Header></Header>
+      <Outlet></Outlet>
+    <Footer></Footer>
   </div>
-  <Footer></Footer>
   </>)
 }
 export default Layout;
