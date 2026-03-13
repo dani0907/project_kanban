@@ -1,14 +1,22 @@
-function Header(){
-  return(
-    <header className="border-b border-gray-100 px-10 py-6 flex justify-between items-center bg-white/80 backdrop-blur-md sticky top-0 z-10">
-      <h1 className="text-xl font-black tracking-tighter">KANBAN.</h1>
-      <div className="flex items-center gap-4 text-sm font-medium text-gray-500">
-        <button className="hover:text-black">Boards</button>
-        <button className="hover:text-black">Members</button>
-        <div className="w-8 h-8 rounded-full bg-gray-200 border border-gray-100 flex items-center justify-center text-xs font-bold text-gray-600">D</div>
+import styles from './header.module.scss';
+
+function Header() {
+  return (
+    <header className={styles.header}>
+      <div className={styles.header_logo}>
+        <div className={styles['header_logo-icon']}>✦</div>
+        <span className={styles['header_logo-text']}>
+          kanban<span>.</span>
+        </span>
       </div>
+
+      <nav className={styles.header_nav}>
+        <button className={styles['header_nav-btn']}>Boards</button>
+        <button className={styles['header_nav-btn']}>Members</button>
+        <div className={styles.header_avatar}>D</div>
+      </nav>
     </header>
-  )
+  );
 }
 
 export default Header;

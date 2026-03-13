@@ -1,0 +1,120 @@
+@use '../style/variables' as *;
+
+.card {
+  background: $color-white;
+  border-radius: $radius-lg;
+  padding: $spacing-md 18px;
+  margin-bottom: 10px;
+  box-shadow: $shadow-card;
+  border: 1.5px solid $color-border;
+  cursor: grab;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  &:hover {
+    box-shadow: $shadow-card-hover;
+    transform: translateY(-2px);
+  }
+
+  &-dragging {
+    opacity: 0.8;
+    box-shadow: $shadow-card-hover;
+  }
+
+  // ── top accent line ──
+  &_accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-radius: $radius-lg $radius-lg 0 0;
+  }
+
+  // ── priority row ──
+  &_priority-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $spacing-sm;
+    margin-top: 2px;
+  }
+
+  &_priority-left {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  &_priority-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: $radius-full;
+    flex-shrink: 0;
+  }
+
+  &_priority-label {
+    font-family: $font-body;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  // Priority color variants
+  &-high   .card_priority-dot,
+  &-high   .card_accent { background: $color-priority-high; }
+  &-high   .card_priority-label { color: $color-priority-high; }
+
+  &-medium .card_priority-dot,
+  &-medium .card_accent { background: $color-priority-medium; }
+  &-medium .card_priority-label { color: $color-priority-medium; }
+
+  &-low    .card_priority-dot,
+  &-low    .card_accent { background: $color-priority-low; }
+  &-low    .card_priority-label { color: $color-priority-low; }
+
+  // ── more button ──
+  &_more-btn {
+    color: $color-text-muted;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+
+    &:hover {
+      color: $color-text-primary;
+    }
+  }
+
+  // ── title ──
+  &_title {
+    font-family: $font-display;
+    font-size: 14px;
+    font-weight: 600;
+    color: $color-text-primary;
+    line-height: 1.4;
+    margin-bottom: $radius-md;
+  }
+
+  // ── tags ──
+  &_tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+}
+
+// ─── Tag chip ─────────────────────────────────────────
+// Tag colors are applied inline (dynamic hashing), but base styles here
+.tag {
+  font-family: $font-body;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: $radius-full;
+}

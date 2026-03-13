@@ -1,0 +1,133 @@
+@use '../style/variables' as *;
+
+// ─── Column color themes ───────────────────────────────
+$todo-accent:       #FFB5C8;
+$todo-bg:           #FFF0F4;
+$inprogress-accent: #B5D5FF;
+$inprogress-bg:     #F0F6FF;
+$done-accent:       #B5F0C8;
+$done-bg:           #F0FFF5;
+
+.column {
+  width: 280px;
+  flex-shrink: 0;
+  border-radius: $radius-xl;
+  padding: 18px $spacing-md;
+  border: 1.5px solid transparent;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 140px);
+
+  // ── per-column themes ──
+  &-todo {
+    background: $todo-bg;
+    border-color: rgba($todo-accent, 0.4);
+
+    .column_dot       { background: $todo-accent; }
+    .column_count     { background: rgba($todo-accent, 0.5); }
+    .column_add-btn   { background: rgba($todo-accent, 0.4); }
+    .column_add-card  { border-color: $todo-accent; color: rgba($todo-accent, 0.8); }
+  }
+
+  &-inProgress {
+    background: $inprogress-bg;
+    border-color: rgba($inprogress-accent, 0.4);
+
+    .column_dot       { background: $inprogress-accent; }
+    .column_count     { background: rgba($inprogress-accent, 0.5); }
+    .column_add-btn   { background: rgba($inprogress-accent, 0.4); }
+    .column_add-card  { border-color: $inprogress-accent; color: rgba($inprogress-accent, 0.8); }
+  }
+
+  &-done {
+    background: $done-bg;
+    border-color: rgba($done-accent, 0.4);
+
+    .column_dot       { background: $done-accent; }
+    .column_count     { background: rgba($done-accent, 0.5); }
+    .column_add-btn   { background: rgba($done-accent, 0.4); }
+    .column_add-card  { border-color: $done-accent; color: rgba($done-accent, 0.8); }
+  }
+
+  // ── header ──
+  &_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $spacing-md;
+  }
+
+  &_header-left {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+  }
+
+  &_dot {
+    width: 10px;
+    height: 10px;
+    border-radius: $radius-full;
+    flex-shrink: 0;
+  }
+
+  &_title {
+    font-family: $font-display;
+    font-size: 15px;
+    font-weight: 800;
+    color: $color-text-primary;
+  }
+
+  &_count {
+    font-family: $font-body;
+    font-size: 11px;
+    font-weight: 700;
+    color: $color-text-primary;
+    border-radius: 10px;
+    padding: 1px 8px;
+  }
+
+  &_add-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: $radius-full;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: $color-text-primary;
+    font-weight: 300;
+    transition: $transition-base;
+    flex-shrink: 0;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+
+  // ── cards list ──
+  &_cards {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 2px;
+    min-height: 10px;
+  }
+
+  // ── add card button ──
+  &_add-card {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: 1.5px dashed;
+    border-radius: $radius-md;
+    font-family: $font-body;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: $spacing-xs;
+    transition: $transition-base;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.6);
+    }
+  }
+}

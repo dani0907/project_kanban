@@ -1,0 +1,55 @@
+@use '../style/variables' as *;
+
+.board {
+  padding: $spacing-xl;
+
+  &_heading {
+    margin-bottom: 28px;
+  }
+
+  &_title {
+    font-family: $font-display;
+    font-size: 26px;
+    font-weight: 900;
+    color: $color-text-primary;
+    letter-spacing: -0.03em;
+    margin-bottom: $spacing-xs;
+  }
+
+  &_subtitle {
+    font-family: $font-body;
+    font-size: 13px;
+    color: $color-text-muted;
+  }
+
+  &_columns {
+    display: flex;
+    gap: $spacing-md;
+    overflow-x: auto;
+    padding-bottom: $spacing-md;
+    align-items: flex-start;
+  }
+
+  &_add-column {
+    min-width: 200px;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: $radius-xl;
+    border: 1.5px dashed $color-border-dashed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: $color-text-muted;
+    font-family: $font-body;
+    font-size: 13px;
+    font-weight: 600;
+    height: 80px;
+    transition: $transition-base;
+
+    &:hover {
+      border-color: #bbb;
+      color: $color-text-secondary;
+    }
+  }
+}
